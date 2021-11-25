@@ -38,6 +38,17 @@ button {
 }
 
 hr {
-	width: 100%;
-	border: solid 1px #959595;
+	color: #959595;
+}
+
+.select-breeds {
+	text-align: center;
+}
+
+.select-breeds label {
+	margin-right: 20px;
+}
+.select-breeds select {
+	font-size: 110%;
+	width: auto;
 }

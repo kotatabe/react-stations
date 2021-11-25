@@ -1,7 +1,7 @@
 // DO NOT DELETE
 
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { DogImage } from './DogImage.js'
 
 export function Description() {
