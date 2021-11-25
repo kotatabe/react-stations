@@ -19,6 +19,17 @@ img {
 
 button {
 	display: block;
+	color: #fff;
+	background-color: #1782c4;
+	border-radius: 3px;
+	padding: 3px;
+	width: 60px;
+	border: none;
+}
+
+button:hover {
+	background-color: #1a91db;
+	color: #fff;
 }
 
 .description-area {
@@ -42,7 +53,9 @@ hr {
 }
 
 .select-breeds {
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .select-breeds label {
@@ -51,4 +64,20 @@ hr {
 .select-breeds select {
 	font-size: 110%;
 	width: auto;
+	padding: 2px;
+	margin-right: 10px;
+}
+
+ul {
+	list-style: none;
+}
+
+.dog-img-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+.dog-img-list li {
+	margin: 10px 20px;
 }

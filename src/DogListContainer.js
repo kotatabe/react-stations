@@ -7,6 +7,7 @@ import { BreedsSelect } from './BreedsSelect.js'
 export function DogListContainer () {
 
 	const [breeds, setBreeds] = useState([]);
+	const [imgList, setImgList] = useState([]);
 
 	useEffect(() => {
 		fetch("https://dog.ceo/api/breeds/list/all")
@@ -18,6 +19,11 @@ export function DogListContainer () {
 	}, []);
 
 	return (
-		<BreedsSelect breedsArr={breeds} />
+		<div className="dog-list-container">
+			<BreedsSelect breeds={breeds} setImgList={setImgList} />
+			<ul className="dog-img-list">
+				{ imgList.map(url => <li><img src={url} /></li>) }
+			</ul>
+		</div>
 	);
 }

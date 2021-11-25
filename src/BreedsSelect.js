@@ -9,10 +9,25 @@ export function BreedsSelect (props) {
 	return (
 		<div className="select-breeds">
 			<label htmlFor="select-breeds">breeds List</label>
-			<select value={selectedBreed} onChange={ e => { setSelectedBreed(e.target.value) }}>
+			<select value={selectedBreed}
+				onChange={e => { setSelectedBreed(e.target.value)}}>
 				<option value="">--Please Select--</option>
-				{props.breedsArr.map(b => <option value={b}>{b}</option>)}
+				{props.breeds.map(b => <option value={b}>{b}</option>)}
 			</select>
+			<button onClick={() => {
+				if (selectedBreed) {
+					fetch("https://dog.ceo/api/breed/" + selectedBreed + "/images/random/12")
+					.then(response => response.json())
+					.then(data => {
+						props.setImgList(data.message);
+					})
+				}
+				else {
+					props.setImgList([]);
+				}
+			}}>
+				表示
+			</button>
 		</div>
 	);
 }
